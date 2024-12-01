@@ -3,7 +3,9 @@
         {
             "name": "Linux",
             "includePath": [
-                "${workspaceFolder}/**"
+                "${workspaceFolder}/**",
+                "/home/seungmin/opencv_prj/include",
+                "/usr/local/opencv345/include"
             ],
             "defines": [],
             "cStandard": "c17",
