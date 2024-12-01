@@ -1,6 +1,6 @@
 # face_verification_prj_with_IR_cam
 
-## 📖 개요
+## 개요
 이 프로그램은 IR 카메라를 활용해 스푸핑을 방지하는 얼굴 인증기 이다. 등록된 얼굴과 실시간 촬영된 얼굴 데이터를 비교하여 인증을 수행한다. LBP(Local Binary Pattern)를 이용한 얼굴 특징 추출, HOG(Histogram of Oriented Gradients)를 이용한 눈 상태 분석, 코사인 유사도를 기반으로 한 얼굴 인증 판단이 포함된다.
 
 ---
