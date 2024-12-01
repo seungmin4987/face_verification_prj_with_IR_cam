@@ -1,7 +1,7 @@
 # face_verification_prj_with_IR_cam
 
 ## 📖 개요
-이 프로그램은 OpenCV와 IR 카메라를 활용해 얼굴을 등록하고, 등록된 얼굴과 실시간 촬영된 얼굴 데이터를 비교하여 인증을 수행한다. 주요 기술로는 LBP(Local Binary Pattern)를 이용한 얼굴 특징 추출, HOG(Histogram of Oriented Gradients)를 이용한 눈 상태 분석, 코사인 유사도를 기반으로 한 얼굴 인증 판단이 포함된다.
+이 프로그램은 IR 카메라를 활용해 스푸핑을 방지하는 얼굴 인증기 이다. 등록된 얼굴과 실시간 촬영된 얼굴 데이터를 비교하여 인증을 수행한다. LBP(Local Binary Pattern)를 이용한 얼굴 특징 추출, HOG(Histogram of Oriented Gradients)를 이용한 눈 상태 분석, 코사인 유사도를 기반으로 한 얼굴 인증 판단이 포함된다.
 
 ---
 
@@ -26,17 +26,18 @@
 
 ---
 
-### 눈 상태 확인 및 전처리
+### 눈 상태 확인
 - **`is_both_eye_opened`**: 얼굴 이미지에서 양쪽 눈이 열려 있는지 HOG 데이터를 기반으로 분석.
 - **`is_eye_opened`**: 특정 눈 영역의 HOG 데이터를 분석해 눈이 열려 있는지 확인.
 - **`crop_eye_region`**: 랜드마크 좌표를 기준으로 눈 영역을 잘라내고 전처리.
 - **`increaseContrast`**: 이미지 대비를 조정해 밝고 어두운 영역의 차이를 강화.
-- **`rotateImage`**: 얼굴 이미지를 수평 정렬하도록 회전.
+- **`rotateImage`**: 크롭한 눈 이미지를 수평 정렬하도록 회전.
+- **`calculate_vector`**: 이미지의 모든 픽셀에 대해 그래디언트 벡터(크기와 방향) 계산.
 
 ---
 
-### 데이터 분석 및 저장
-- **`calculate_vector`**: 이미지의 모든 픽셀에 대해 그래디언트 벡터(크기와 방향) 계산.
+### 데이터 분석
+
 - **`append_histogram_to_csv`**: HOG 데이터를 CSV 파일로 저장해 디버깅 및 분석에 활용.
 
 ---
